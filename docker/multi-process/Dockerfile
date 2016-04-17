@@ -1,5 +1,5 @@
 FROM ubuntu:14.04
-MAINTAINER Andrew Cantino
+MAINTAINER Johnny Zen
 
 ADD docker/scripts/prepare /scripts/prepare
 RUN /scripts/prepare
