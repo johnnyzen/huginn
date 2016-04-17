@@ -169,8 +169,9 @@ module Agents
         end
       end
 
-      ordered_events = sort_events(received_events.order(id: :desc))
-      source_events = ordered_events.limit(events_to_show).to_a
+
+      ordered_events = sort_events(received_events.order(id: :desc).to_a)
+      source_events = ordered_events.take(events_to_show)
 
       interpolation_context.stack do
         interpolation_context['events'] = source_events
